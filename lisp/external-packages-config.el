@@ -6,11 +6,14 @@
 (elpaca-wait)
 
 (use-package treemacs :demand t)
+(elpaca-wait)
 
 (use-package eat
   :config (add-hook 'eat-mode-hook (lambda () (display-line-numbers-mode -1)))
   :bind (("C-o" . other-window) ("<f5>" . treemacs)))
+(elpaca-wait)
 
+(use-package magit :demand t)
 (elpaca-wait)
 
 (use-package
@@ -122,3 +125,11 @@
  :init (doom-modeline-mode)
  :custom (doom-modeline-height 35))
 (elpaca-wait)
+
+(use-package
+  all-the-icons-dired
+  :demand t
+  :after all-the-icons
+  :hook (dired-mode . all-the-icons-dired-mode))
+(elpaca-wait)
+

@@ -30,14 +30,17 @@
  (tool-bar-mode -1)
  (scroll-bar-mode -1)
 
- ;; Line Numbers
+  ;; Line Numbers
  ;; Enable line numbers globally
  (global-display-line-numbers-mode t)
  (dolist (mode '(org-mode-hook
                  term-mode-hook
-                 eshell-mode-hook))
+                 eshell-mode-hook
+		 treemacs-mode-hook
+                 dired-mode-hook
+                 eat-mode-hook))
    (add-hook mode (lambda () (display-line-numbers-mode 0))))
-
+ 
  ;; Highlight line mode
                                         ;(global-hl-line-mode t)
 
@@ -77,4 +80,8 @@
   ("<f7>" . eat)
   ("C-o" . other-window)
   ("s-b" . switch-to-buffer)
-  ("C-q" . kill-buffer)))
+  ("C-q" . kill-buffer)
+  ("S-C-<left>" . shrink-window-horizontally)
+  ("S-C-<right>" . enlarge-window-horizontally)
+  ("S-C-<down>" . shrink-window)
+  ("S-C-<up>" . enlarge-window)))

@@ -38,7 +38,8 @@
   ;; Inhibit prompts for simple recursive operations
   dired-recursive-copies 'always
   ;; Auto-copy to other Dired split window
-  dired-dwim-target t))
+  dired-dwim-target t)
+ :hook (dired-mode . dired-hide-details-mode))
 
 (elpaca-wait)
 
