@@ -1,7 +1,6 @@
 (use-package
  emacs
  :ensure nil
- :elpaca nil
  :demand nil
  :hook (after-init . (lambda () (setq gc-cons-threshold (* 2 1000 1000))))
  :custom
@@ -65,7 +64,8 @@
                  dired-mode-hook
                  ; eat-mode-hook
 		 vterm-mode-hook
-                 sly-mode-hook))
+                 sly-mode-hook
+                 geiser-repl-mode-hook))
    (add-hook mode (lambda () (display-line-numbers-mode 0))))
  
  ;; Highlight line mode
