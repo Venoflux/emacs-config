@@ -57,7 +57,8 @@
   :demand t
   :hook
   (prog-mode . rainbow-delimiters-mode)
-  (sly-mrepl-mode . rainbow-delimiters-mode))
+  (sly-mrepl-mode . rainbow-delimiters-mode)
+  (geiser-repl-mode . rainbow-delimiters-mode))
 
 (use-package paren-face :demand t :config (global-paren-face-mode))
 
@@ -100,7 +101,7 @@
 (elpaca-wait)
 (use-package yasnippet-snippets :demand t :after (yasnippet))
 (elpaca-wait)
-(use-package doom-snippets :after yasnippet :elpaca (:host github :repo "doomemacs/snippets"))
+(use-package doom-snippets :after yasnippet :ensure (:host github :repo "doomemacs/snippets"))
 (elpaca-wait)
 
 (use-package
@@ -146,3 +147,7 @@
   :after company
   :config
   (setq inferior-lisp-program "/usr/bin/sbcl"))
+
+(use-package
+  geiser-guile
+  :demand t)
